@@ -1,0 +1,7 @@
+.navbar-fixed-top {
+	opacity:0.8;
+	background-image: url(img/PLATE.JPG);
+}
+.navbar-fixed-top:hover {
+	opacity:1;
+}
