@@ -1,6 +1,42 @@
 .navbar-fixed-top {
 	opacity:0.8;
+	background-image: url(img/roof.png);
+	background-repeat: repeat-x;
+	z-index: 9;
+		height: 30px;
 }
 .navbar-fixed-top:hover {
 	opacity:0.9;
+}
+.navbar-inverse .navbar-nav>li>a, .dropdown {
+	opacity:1 !important;
+	display: block;
+	background-color: #0f0f0f;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+	color:white;
+	font-weight: bold;
+	opacity:1 !important;
+	z-index: 10;
+	display: block;
+	background-color: #0f0f4a !important;
+}
+
+.navbar-inverse .navbar-nav>li>a:focus {
+	color:white;
+	font-weight: bold;
+	opacity:1 !important;
+	z-index: 10;
+	display: block;
+	background-color: #0f0f2a !important;
+}
+button {
+	background-image: url(img/plate.jpg) !important;
+	opacity:1;
+
+}
+.carousel {
+	background-image: url(img/background.jpg);
+	margin-top:4%;
 }
