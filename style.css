@@ -1,3 +1,7 @@
+.navbar-wrapper {
+	position:fixed;
+	z-index: 10;
+}
 .navbar-fixed-top {
 	opacity:0.8;
 	background-image: url(img/roof.png);
@@ -39,4 +43,7 @@ button {
 .carousel {
 	background-image: url(img/background.jpg);
 	margin-top:4%;
+}
+.body {
+	background-image: url(img/background.jpg);
 }
