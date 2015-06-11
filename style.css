@@ -1,5 +1,5 @@
 .navbar-wrapper {
-	position:fixed;
+	position:fixed !important;
 	z-index: 10;
 }
 .navbar-fixed-top {
@@ -41,13 +41,20 @@ button {
 
 }
 .carousel {
-	background-image: url(img/background.jpg);
-	margin-top:4%;
+	 margin-top:52px;
+	height: auto;
+	position: relative;
+	display: block;
 }
 .body {
 	background-image: url(img/background.jpg);
 }
-.carousel-caption>p {
+
+.carousel-caption {
+	text-align: right !important;
 	color:white;
 	font-weight: 500;
+}
+.marketing {
+margin-top:20px;
 }

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="img/logo.ico">
 
 
     <title>大田家</title>
@@ -18,8 +18,30 @@
     <link href="bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="bootstrap-3.3.4-dist/assets/js/ie-emulation-modes-warning.js"></script>
+    <!--[if lt IE 9]><script src="../../assets/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="bootstrap-3.3.4-dist/assets/ie-emulation-modes-warning.js"></script>
+  <script type="text/javascript" src="jquery-1.11.2.min.js">
+// element
+imagesLoaded( document.querySelector('#sidebar, #multihero, #new-item'), function( instance ) {
+  console.log('all images are loaded');
+});
+// selector string
+imagesLoaded( '#sidebar, #multihero, #new-item', function() {...});
+// multiple elements
+var posts = document.querySelectorAll('.post');
+imagesLoaded( posts, function() {...});
+var imgLoad = imagesLoaded('#sidebar, #multihero, #new-item');
+imgLoad.on( 'always', function() {
+  console.log( imgLoad.images.length + ' images loaded' );
+  // detect which image is broken
+  for ( var i = 0, len = imgLoad.images.length; i < len; i++ ) {
+    var image = imgLoad.images[i];
+    var result = image.isLoaded ? 'loaded' : 'broken';
+    console.log( 'image is ' + result + ' for ' + image.img.src );
+  }
+});
+
+</script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -49,26 +71,24 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#"><left><img src="img/giwa.png" style="width:10%; margin-left:0px; position:absolute;"></img></left></a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li><a href="index.html">ホーム</a></li>
                 <li class="active"><a href="about.html">大田家について</a></li>
-                <li><a href="mailto:t-iga@wise-ltd.net?Subject=大田家">お問い合せ</a></li></li>
-                 <li><a href="menu.html">メニュー</a></li>
-             <!--   <li class="dropdown">
+                <li><a href="mailto:t-iga@wise-ltd.net?Subject=大田家">お問い合せ</a></li>
+              <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">メニュー <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">お肉</a></li>
-                    <li><a href="#">料理</a></li>
-                    <li><a href="#">サラダ</a></li>
+                    <li class="dropdown-header">ランチ</li>
+                    <li><a href="lunch.html">ランチメニュー</a></li>
                     <li class="divider"></li>
-                    <li class="dropdown-header">その他</li>
-                    <li><a href="#">盛り合わせ</a></li>
-                    <li><a href="#">飲物</a></li>
+                    <li class="dropdown-header">焼肉と韓国料理</li>
+                    <li><a href="menu.html">食物メニュー</a></li>
+                    <li><a href="drink.html">飲物メニュー</a></li>
                   </ul>
-                </li> -->
+                </li>
+                 <li><a href="mailto:t-iga@wise-ltd.net?Subject=00月00日大田家０名様予約">ご予約</a></li>
               </ul>
             </div>
           </div>
@@ -76,8 +96,6 @@
 
       </div>
     </div>
-
-
 
 
 
@@ -98,10 +116,10 @@
       <div class="row featurette">
         <div class="col-md-7">
           <h2 class="featurette-heading">20年以上の歴史 <span class="text-muted">その味</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <p class="lead">名古屋市中区錦にある韓国焼肉　大田家。23年間の歴史を持つ店。2015年5月15日よりリニューアルを実施。23年間の伝統の味と居心地の良い空間を提供します。</p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="img/bibigo.png" data-holder-rendered="true">
+          <img class="featurette-image img-responsive center-block" alt="500x500" src="img/mori.jpg" data-holder-rendered="true">
         </div>
       </div>
 
@@ -109,11 +127,11 @@
 
       <div class="row featurette">
         <div class="col-md-7 col-md-push-5">
-          <h2 class="featurette-heading">高級な雰囲気 <span class="text-muted">錦</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">高級<span class="text-muted">焼肉</span></h2>
+          <p class="lead">特別に選択した上以上の牛肉を提供しています.</p>
         </div>
         <div class="col-md-5 col-md-pull-7">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="img/garubiplating.png" data-holder-rendered="true">
+          <img class="featurette-image img-responsive center-block" alt="500x500" src="img/yakiniku.jpg" data-holder-rendered="true">
         </div>
       </div>
 
@@ -121,18 +139,53 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">和牛の味<span class="text-muted">韓国料理</span></h2>
+          <h2 class="featurette-heading">本場の味<span class="text-muted">韓国料理</span></h2>
           <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="img/galbijjim.png" data-holder-rendered="true">
+          <img class="featurette-image img-responsive center-block" alt="500x500" src="img/samgyupset.jpg" data-holder-rendered="true">
         </div>
       </div>
 
       <hr class="featurette-divider">
 
       <!-- /END THE FEATURETTES -->
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
 
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="img-circle" src="img/traditional.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h2>営業時間</h2>
+          <p><strong>・お昼</strong>　- 11:00 ~ 14:00 (LO : 13:30)</p>
+          <p><strong>・夜</strong>　- 17:00 ~ 2:00 (LO: 1:30)</p>
+          <p><strong>・定休日</strong> : 日曜 </p>
+  
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="img/ootayalogo.jpg" width="140" height="140">
+          <h2>お店</h2>
+          <p>名古屋市中区錦3丁目7番5号</p>
+          <p>シャインシグマビル2F</p>
+          <p>Tel : 052-973-2658</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="img/mori2.jpg" width="140" height="140">
+          
+          <h2>メニュー</h2>
+          <p>ボタンクリックしてメニューへ</p>
+          <a class="btn btn-warning btn-sm" href="lunch.html" role="button"><strong>ランチ</strong> »</a>        
+          <a class="btn btn-danger btn-sm" href="menu.html" role="button"><strong>夜</strong> »</a> 
+          <a class="btn btn-info btn-sm" href="drink.html" role="button"><strong>ドリンク</strong> »</a>
+          
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+      <hr class="featurette-divider">
 
       <!-- FOOTER -->
       <footer>
@@ -149,9 +202,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="bootstrap-3.3.4-dist/assets/js/vendor/holder.js"></script>
+    <script src="bootstrap-3.3.4-dist/assets/vendor/holder.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="bootstrap-3.3.4-dist/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="bootstrap-3.3.4-dist/assets/ie10-viewport-bug-workaround.js"></script>
   
 
 <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" preserveAspectRatio="none" style="visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs></defs><text x="0" y="23" style="font-weight:bold;font-size:23pt;font-family:Arial, Helvetica, Open Sans, sans-serif;dominant-baseline:middle">500x500</text></svg></body></html>

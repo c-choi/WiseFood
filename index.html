@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="img/logo.ico">
 
 
     <title>大田家</title>
@@ -18,9 +18,30 @@
     <link href="bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="bootstrap-3.3.4-dist/assets/js/ie-emulation-modes-warning.js"></script>
+    <!--[if lt IE 9]><script src="../../assets/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="bootstrap-3.3.4-dist/assets/ie-emulation-modes-warning.js"></script>
+  <script type="text/javascript" src="jquery-1.11.2.min.js">
+// element
+imagesLoaded( document.querySelector('#sidebar, #multihero, #new-item'), function( instance ) {
+  console.log('all images are loaded');
+});
+// selector string
+imagesLoaded( '#sidebar, #multihero, #new-item', function() {...});
+// multiple elements
+var posts = document.querySelectorAll('.post');
+imagesLoaded( posts, function() {...});
+var imgLoad = imagesLoaded('#sidebar, #multihero, #new-item');
+imgLoad.on( 'always', function() {
+  console.log( imgLoad.images.length + ' images loaded' );
+  // detect which image is broken
+  for ( var i = 0, len = imgLoad.images.length; i < len; i++ ) {
+    var image = imgLoad.images[i];
+    var result = image.isLoaded ? 'loaded' : 'broken';
+    console.log( 'image is ' + result + ' for ' + image.img.src );
+  }
+});
 
+</script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -54,21 +75,18 @@
               <ul class="nav navbar-nav">
                 <li class="active"><a href="#">ホーム</a></li>
                 <li><a href="about.html">大田家について</a></li>
-              <li><a href="mailto:t-iga@wise-ltd.net?Subject=大田家">お問い合せ</a></li></li>
-                <li><a href="menu.html">メニュー</a></li>
-
-             <!--   <li class="dropdown">
+              <li><a href="mailto:t-iga@wise-ltd.net?Subject=大田家">お問い合せ</a></li>              <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">メニュー <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">お肉</a></li>
-                    <li><a href="#">料理</a></li>
-                    <li><a href="#">サラダ</a></li>
+                    <li class="dropdown-header">ランチ</li>
+                    <li><a href="lunch.html">ランチメニュー</a></li>
                     <li class="divider"></li>
-                    <li class="dropdown-header">その他</li>
-                    <li><a href="#">盛り合わせ</a></li>
-                    <li><a href="#">飲物</a></li>
+                    <li class="dropdown-header">焼肉と韓国料理</li>
+                    <li><a href="menu.html">食物メニュー</a></li>
+                    <li><a href="drink.html">飲物メニュー</a></li>
                   </ul>
-                </li> -->
+                </li>
+                 <li><a href="mailto:t-iga@wise-ltd.net?Subject=00月00日大田家０名様予約">ご予約</a></li>
               </ul>
             </div>
           </div>
@@ -78,44 +96,44 @@
     </div>
 
 
-
-    <!-- Carousel
+ <!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel" style="overflow: none; margin-bottom: 10px;">
       <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class=""></li>
-        <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="2" class=""></li>
-      </ol>
+     
       <div class="carousel-inner" role="listbox">
         <div class="item">
-          <center><img class="first-slide" src="img/exterior.jpg" alt="First slide" style="max-height:300px; width:auto;"></center>
+          <center><img class="first-slide" src="img/front1.jpg" alt="First slide" style="max-height:300px; width:100%;"></center>
           <div class="container">
             <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+              <h1>楽な雰囲気</h1>
+              <h4>静かなカウンタ席と団体様の為の長いテーブル</h4>
+              <p><a class="btn btn-sm btn-danger" href="mailto:t-iga@wise-ltd.net?Subject=大田家予約" role="button">メールご予約</a></p>
             </div>
           </div>
         </div>
         <div class="item active">
-          <center><img class="second-slide" src="img/lunch.jpg" alt="Second slide" style="max-height:300px; width:auto;"></center>
+          <center><img class="second-slide" src="img/front2.jpg" alt="Second slide" style="max-height:300px; width:100%;"></center>
           <div class="container">
             <div class="carousel-caption">
-              <h1>大田家-ランチStart!!</h1>
-              <p>６月１５日から大田家ランチ始まります。メニューは厚切り牛タン定食と牛タン定食です。</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+            <h1>RENEWAL OPEN</h1>
+              <h4>名古屋市中区錦にある韓国焼肉　大田家。
+              <h4>23年間の歴史を持つ店。</h4>
+              <h4>2015年5月15日よりリニューアルを実施。</h4>
+              <h4>23年間の伝統の味と居心地の良い空間を提供します。</h4>
+              <p><a class="btn btn-sm btn-primary" href="about.html" role="button">大田家について</a></p>
             </div>  
           </div>
         </div>
         <div class="item">
-          <center><img class="third-slide" src="img/interior.jpg" alt="Third slide" style="max-height:300px; width:auto;"></center>
+          <center><img class="third-slide" src="img/front3.jpg" alt="Third slide" style="max-height:300px; width:100%;"></center>
           <div class="container">
             <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+              <h1>ランチStart!!</h1>
+              <h4>６月１５日から大田家ランチ始まります。</h4>
+              <h4>メニューは厚切り牛タン定食と豚タン定食です。</h4>
+
+              <p><a class="btn btn-sm btn-warning" href="lunch.html" role="button">ランチメニューへ</a></p>
             </div>
           </div>
         </div>
@@ -129,6 +147,7 @@
         <span class="sr-only">Next</span>
       </a>
     </div><!-- /.carousel -->
+  
 
 
     <!-- Marketing messaging and featurettes
@@ -142,9 +161,9 @@
         <div class="col-lg-4">
           <img class="img-circle" src="img/traditional.jpg" alt="Generic placeholder image" width="140" height="140">
           <h2>営業時間</h2>
-          <p>・お昼　- 11:00 ~ 14:00 (LO : 13:30)</p>
-          <p>・夜　- 17:00 ~ 2:00 (LO: 1:30)</p>
-          <p>・定休日 : 日曜 </p>
+          <p><strong>・お昼</strong>　- 11:00 ~ 14:00 (LO : 13:30)</p>
+          <p><strong>・夜</strong>　- 17:00 ~ 2:00 (LO: 1:30)</p>
+          <p><strong>・定休日</strong> : 日曜 </p>
   
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
@@ -153,28 +172,30 @@
           <p>名古屋市中区錦3丁目7番5号</p>
           <p>シャインシグマビル2F</p>
           <p>Tel : 052-973-2658</p>
-          <p><a class="btn btn-default" href="#" role="button">地図 »</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="img/bibimbab.png" width="140" height="140">
+          <img class="img-circle" src="img/mori2.jpg" width="140" height="140">
+          
           <h2>メニュー</h2>
-          <p>お肉、韓国料理</p>
-          <p><a class="btn btn-default" href="menu.html" role="button">メニューページへ »</a></p>
+          <p>ボタンクリックしてメニューへ</p>
+          <a class="btn btn-warning btn-sm" href="lunch.html" role="button"><strong>ランチ</strong> »</a>        
+          <a class="btn btn-danger btn-sm" href="menu.html" role="button"><strong>夜</strong> »</a> 
+          <a class="btn btn-info btn-sm" href="drink.html" role="button"><strong>ドリンク</strong> »</a>
+          
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
-
-
+    
       <!-- START THE FEATURETTES -->
 
       <hr class="featurette-divider">
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">大根サラダ <span class="text-muted">ごまドレシング</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">高級焼肉 <span class="text-muted">網焼</span></h2>
+          <p class="lead">美味しい肉 </p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="img/daiconsalad.jpEg" data-holder-rendered="true">
+          <img class="featurette-image img-responsive center-block"  alt="500x500" src="img/yakiniku.jpg" data-holder-rendered="true">
         </div>
       </div>
 
@@ -182,11 +203,11 @@
 
       <div class="row featurette">
         <div class="col-md-7 col-md-push-5">
-          <h2 class="featurette-heading">石焼ビビンバ <span class="text-muted">熱い</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">豚足(チョッバル) <span class="text-muted">美味しい</span></h2>
+          <p class="lead">独特な香りがする味付けに２時間以上煮込んだ豚肉の味から韓国の味が感じれます。</p>
         </div>
         <div class="col-md-5 col-md-pull-7">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="img/bibimbab.png" data-holder-rendered="true">
+          <img class="featurette-image img-responsive center-block"  alt="500x500" src="img/tonsoku.jpg" data-holder-rendered="true">
         </div>
       </div>
 
@@ -194,11 +215,11 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">松坂牛ステーキ <span class="text-muted">おろしポン酢タレ</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">ネギサラダ <span class="text-muted">特製ドレシング</span></h2>
+          <p class="lead">辛いネギとサンチュのサラダに甘辛特製ドレシング。</p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="img/matsuzaka.jpg" data-holder-rendered="true">
+          <img class="featurette-image img-responsive center-block"  alt="500x500" src="img/salad.jpg" data-holder-rendered="true">
         </div>
       </div>
 
@@ -222,9 +243,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="bootstrap-3.3.4-dist/assets/js/vendor/holder.js"></script>
+    <script src="bootstrap-3.3.4-dist/assets/vendor/holder.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="bootstrap-3.3.4-dist/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="bootstrap-3.3.4-dist/assets/ie10-viewport-bug-workaround.js"></script>
   
 
 <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" preserveAspectRatio="none" style="visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs></defs><text x="0" y="23" style="font-weight:bold;font-size:23pt;font-family:Arial, Helvetica, Open Sans, sans-serif;dominant-baseline:middle">500x500</text></svg></body></html>
